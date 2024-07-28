@@ -1,0 +1,302 @@
+/* Estilos personalizados para el header */
+.custom-navbar {
+  background-color: #002b36;
+  /* Azul más oscuro */
+  padding: 0.5rem 2rem;
+}
+
+/* Estilos personalizados para agrandar el texto de navbar-brand */
+.custom-brand {
+  font-size: 3vw;
+  /* Ajusta el tamaño de la fuente según tus necesidades */
+}
+
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important;
+  /* Blanco para el texto */
+}
+
+/* Asegúrate de que el menú hamburguesa sea visible */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+  /* Blanco translúcido */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/* Estilos personalizados para el footer */
+.custom-footer {
+  background-color: #002b36;
+  /* Azul más oscuro */
+  color: #ffffff;
+  /* Blanco para el texto */
+  text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+  /* Asegurarse de que el body ocupe toda la altura de la pantalla */
+  margin: 0;
+  /* Eliminar márgenes predeterminados */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+  /* Empujar el pie de página hacia el fondo */
+  font-size: 2vw;
+}
+
+.custom-container {
+  margin: 3rem;
+}
+
+.btn-custom {
+  background-color: #002b36;
+  /* Azul oscuro */
+  border-color: #002b36;
+  /* Bordes del botón */
+  color: white;
+}
+
+.btn-custom:hover {
+  border: #001f29 1px solid;
+  color: #001f29;
+  /* Un tono más oscuro para el estado hover */
+  background-color: white;
+}
+
+.estilos-index {
+  padding: 2rem 4rem;
+  margin: 1rem;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: #002b36;
+
+}
+
+.estilos-index h3 {
+  color: #002b36;
+  font-size: 2rem;
+}
+
+.estilos-index p {
+  font-size: 1.5rem;
+}
+
+.estilos-index figure {
+  display: flex;
+  justify-content: space-around;
+}
+
+.estilos-index figure img {
+  height: 8vw;
+}
+/* animacion para las imagenes */
+.estilos-index figure img {
+  height: 8vw;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.estilos-index figure img:nth-child(1) {
+  animation: fadeIn 0.5s forwards;
+}
+.estilos-index figure img:nth-child(2) {
+  animation: fadeIn 0.5s 0.2s forwards;
+}
+.estilos-index figure img:nth-child(3) {
+  animation: fadeIn 0.5s 0.4s forwards;
+}
+.estilos-index figure img:nth-child(4) {
+  animation: fadeIn 0.5s 0.6s forwards;
+}
+.estilos-index figure img:nth-child(5) {
+  animation: fadeIn 0.5s 0.8s forwards;
+}
+.estilos-index figure img:nth-child(6) {
+  animation: fadeIn 0.5s 1s forwards;
+}
+.estilos-index figure img:nth-child(7) {
+  animation: fadeIn 0.5s 1.2s forwards;
+}
+.estilos-index figure img:nth-child(8) {
+  animation: fadeIn 0.5s 1.4s forwards;
+}
+.estilos-index figure img:nth-child(9) {
+  animation: fadeIn 0.5s 1.6s forwards;
+}
+.estilos-index figure img:nth-child(10) {
+  animation: fadeIn 0.5s 1.8s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* fin animacion imagenes */
+
+
+/* Estilos para las tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Evita bordes dobles */
+  font-size: 2vw;
+  border: .2vw solid #002b36;
+  /* Bordes de las celdas */
+
+}
+
+th {
+  background-color: #002b36;
+  /* Azul oscuro */
+  color: #ffffff;
+  /* Blanco */
+  text-align: center;
+  /* Centrar el texto */
+  padding: 10px;
+  border: 1px solid #002b36;
+  /* Bordes de los encabezados */
+}
+
+td {
+  text-align: center;
+  /* Centrar el texto en las celdas */
+  padding: 1vw;
+  border: .2vw solid #002b36;
+  /* Bordes de las celdas */
+
+}
+
+/* Estilo para las imágenes en la tabla */
+img {
+  border-radius: 10%;
+  /* Imágenes redondeadas */
+  max-width: 8vw;
+  /* Tamaño máximo de las imágenes */
+  /* max-height: 8vw; */
+  height: auto;
+  /* Mantener la proporción de la imagen */
+}
+
+.database-container {
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+}
+@media (max-width: 950px) {
+  .database-container{
+    flex-direction: column;
+  }
+}
+
+.tabla-famosos {
+  width: 100%;
+}
+
+.formulario-agregar {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #001f29;
+  color: white;
+  gap: 4rem;
+  /* height: 60%; */
+  justify-content: left;
+  text-align: center;
+  /* font-size: 120%; */
+}
+
+.formulario-agregar .btn-custom {
+  background-color: white;
+  /* Azul oscuro */
+  color: #002b36;
+}
+
+.formulario-agregar .btn-custom:hover {
+  background-color: #001f29;
+  /* Un tono más oscuro para el estado hover */
+  border: white 1px solid;
+  color: white;
+}
+.actualizar{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #001f29;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 150%;
+  width: 70%;
+}
+.actualizar input{
+  width: 100% ;
+}
+.actualizar .btn-custom {
+  background-color: white;
+  /* Azul oscuro */
+  color: #002b36;
+  width: 50%;
+
+}
+
+.actualizar .btn-custom:hover {
+  background-color: #001f29;
+  /* Un tono más oscuro para el estado hover */
+  border: white 1px solid;
+  color: white;
+}
+
+.celda-editar{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.celda-editar a{
+  font-size: 1.5vw;
+}
+.celda-editar button{
+  font-size: 1.5vw;
+}
+
+.titilar {
+  display: inline-block; /* Asegúrate de que el elemento se comporte como un bloque en línea para aplicar la animación */
+  animation: titilar 0.7s 3; /* Aplicar animación de deslizamiento y titilado */
+  font-size: 200%;
+}
+
+/* Animación de titilado */
+@keyframes titilar {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

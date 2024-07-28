@@ -1,0 +1,90 @@
+<h1>{{title}}</h1>
+<!-- Mostrar la cantidad de registros -->
+<h2 class="text-center mb-4">Actualmente tienes registrados <strong class="titilar">{{cantidadRegistros}}</strong> famosos</h2>
+
+<div class="database-container">
+  <!-- Formulario de búsqueda -->
+  <div class="formulario-agregar">
+    <h4 class="text-center mb-4">Formulario para buscar famoso</h4>
+    <form class="custom-container text-center mb-4" action="/database" method="GET">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control form-control-lg">
+      </div>
+      <div class="form-group">
+        <label for="profesion">Disciplina:</label>
+        <select id="profesion" name="profesion" class="form-control form-control-lg">
+          <option value="">Seleccione una opción</option>
+          <option value="Deporte">Deporte</option>
+          <option value="Ciencia">Ciencia</option>
+          <option value="Arte">Arte</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-custom btn-lg">Buscar</button>
+    </form>
+
+    <!-- Formulario de agregar nuevo famoso -->
+    <h4 class="text-center mb-4">Formulario para agregar nuevo famoso</h4>
+    <form action="/famosos" method="POST" enctype="multipart/form-data" class="text-center mb-4">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required>
+      </div>
+
+      <div class="form-group">
+        <label for="profesion">Disciplina:</label>
+        <select id="profesion" name="profesion" class="form-control form-control-lg" required>
+          <option value="">Seleccione una opción</option>
+          <option value="Deporte">Deporte</option>
+          <option value="Ciencia">Ciencia</option>
+          <option value="Arte">Arte</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Imagen:</label>
+        <input type="file" id="image" name="image" class="form-control-file">
+      </div>
+
+      <button type="submit" class="btn btn-custom btn-lg">Agregar</button>
+    </form>
+  </div>
+
+  <!-- Tabla de famosos -->
+  <div class="tabla-famosos">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Disciplina</th>
+          <th>Imagen</th>
+          <th>Editar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each famosos}}
+        <tr>
+          <td>{{nombre}}</td>
+          <td>{{profesion}}</td>
+          <td>
+            {{#if image}}
+            <img src="{{image}}" alt="{{nombre}}" style="width: 100px; height: auto;">
+            {{else}}
+            <img src="/assets/noImg.jpeg" alt="Imagen no disponible" style="width: 100px; height: auto;">
+            {{/if}}
+          </td>
+          <td>
+            <div class="celda-editar">
+              <a class="btn btn-custom btn-lg" href="/famosos/edit/{{_id}}">Editar</a>
+              <form action="/famosos/delete/{{_id}}" method="POST" style="display:inline;">
+                <button class="btn btn-custom btn-lg" type="submit"
+                  onclick="return confirm('¿Estás seguro de que deseas eliminar este famoso?');">Eliminar</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
